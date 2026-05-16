@@ -90,9 +90,9 @@ Basic instructions:
 - Edit/add games: the will need to be added in `legacy-games.json` and `legacy-gamesets.json` (if needed), with all the
   necessary data.
 - Edit/add Pokémon: the will need to be added in `legacy-pokemon.json` and then minified to `legacy-pokemon.min.json`.
-- Edit/add Box Presets: the will need to be added in `box-presets/by-gameset` and then bundled to
-  `box-presets/legacy-boxpresets.min.json` by calling `npx -y tsx run src/lib/data-client/box-presets/join-presets.ts`
-  or `bun run src/lib/data-client/box-presets/join-presets.ts`.
+- Edit/add Box Presets: they will need to be added in
+  [`pokepc/dataset`](https://github.com/pokepc/dataset/tree/main/data/boxpresets/classic) and then bundled to
+  `box-presets/legacy-boxpresets.min.json` by calling `bun run src/lib/data-client/box-presets/join-presets.ts`.
 
 > NOTE: when editing the `legacy-pokemon.json` file, you will need to run `pnpm build:data:pokemon` to minify the file.
 > After editing any JSON data file, run a final `pnpm build:data` to make sure everything else is correctly built.
