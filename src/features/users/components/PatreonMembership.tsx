@@ -8,7 +8,7 @@ import { createSessionMembershipPlaceholder } from '../services/createMembership
 
 import { PatreonButton, PatreonUnlinkButton } from '../components/PatreonButtons'
 
-export function PatreonMembership(): JSX.Element | null {
+export function PatreonMembership(): React.JSX.Element | null {
   const auth = useSession()
   const router = useRouter()
   const { error: errorParam } = router ? router.query : { error: undefined }

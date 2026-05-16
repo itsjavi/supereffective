@@ -75,12 +75,12 @@ export const createLivingDexMetadataValidator = (): ZodType<LivingDexDocMeta> =>
 export const createLivingDexBoxValidator = (
   format: LivingDexDocSpecConfig,
 ): ZodType<LivingDexDocBoxByFormat<typeof format.version>> => {
-  const boxValidator = z.object({})
-  const pkmValidator = z.object({})
+  const boxShape: Record<string, ZodType> = {}
+  const pkmShape: Record<string, ZodType> = {}
 
   for (const prop of format.boxProperties) {
     const [propName, typeName] = prop
-    boxValidator.setKey(propName, createLivingDexTypeValidator(typeName))
+    boxShape[propName] = createLivingDexTypeValidator(typeName)
   }
 
   // TODO: improve/refactor this part (required Pkm Props):
@@ -89,10 +89,11 @@ export const createLivingDexBoxValidator = (
   for (const prop of format.pokemonProperties) {
     const [propName, typeName] = prop
     const pkmPropValidator = createLivingDexTypeValidator(typeName)
-    pkmValidator.setKey(propName, requiredPkmProps.includes(propName) ? pkmPropValidator : pkmPropValidator.optional())
+    pkmShape[propName] = requiredPkmProps.includes(propName) ? pkmPropValidator : pkmPropValidator.optional()
   }
 
-  boxValidator.setKey('pokemon', z.array(pkmValidator.or(z.null())))
-
-  return boxValidator as unknown as ZodType
+  return z.object({
+    ...boxShape,
+    pokemon: z.array(z.object(pkmShape).or(z.null())),
+  }) as unknown as ZodType<LivingDexDocBoxByFormat<typeof format.version>>
 }

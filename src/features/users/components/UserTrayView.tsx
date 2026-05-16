@@ -8,7 +8,7 @@ type UserTrayViewProps = {
   returnUrl?: string
 } & React.HTMLAttributes<HTMLAnchorElement>
 
-export function UserTrayView({ activeClass, returnUrl, ...rest }: UserTrayViewProps): JSX.Element {
+export function UserTrayView({ activeClass, returnUrl, ...rest }: UserTrayViewProps): React.JSX.Element {
   // TODO: PATREON_MEMBERSHIP
   const auth = useSession()
   const isPaidMember = auth.membership?.isSubscriptionTier

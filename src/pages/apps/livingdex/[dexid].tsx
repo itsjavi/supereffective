@@ -2,7 +2,7 @@ import { GetServerSidePropsContext } from 'next'
 
 import { cacheConfig } from '@/config/cache'
 import LivingDexApp from '@/features/livingdex/components/LivingDexApp'
-import { getLegacyLivingDexRepository } from '@/features/livingdex/services'
+import { getLegacyLivingDexRepository } from '@/features/livingdex/services/repository'
 import { getPresets } from '@/features/livingdex/services/presets'
 import { PresetDexMap } from '@/features/livingdex/services/presets/types'
 import { LoadedDex } from '@/features/livingdex/services/types'

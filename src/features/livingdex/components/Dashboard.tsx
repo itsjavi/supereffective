@@ -8,7 +8,7 @@ import { useSession } from '@/features/users/auth/hooks/useSession'
 import { ButtonInternalLink } from '@/lib/components/Button'
 import { LoadingBanner } from '@/lib/components/panels/LoadingBanner'
 
-const WelcomeContentContainer = (): JSX.Element => {
+const WelcomeContentContainer = (): React.JSX.Element => {
   return (
     <div className={'page-container dex-count-0'} style={{ paddingTop: 0 }}>
       <WelcomeContent showDescription />
@@ -16,7 +16,11 @@ const WelcomeContentContainer = (): JSX.Element => {
   )
 }
 
-const AuthenticatedDashboardContainer = ({ limits }: { limits: LivingDexResolvedUserLimits | null }): JSX.Element => {
+const AuthenticatedDashboardContainer = ({
+  limits,
+}: {
+  limits: LivingDexResolvedUserLimits | null
+}): React.JSX.Element => {
   const { dexes, dexesLoading } = useDexesContext()
   const [listVariant] = useState<'grid' | 'list'>('list')
 

@@ -42,6 +42,16 @@ const baseConfig = {
     ]
   },
   images: {
+    localPatterns: [
+      {
+        pathname: '/images/**',
+        search: '',
+      },
+      {
+        pathname: '/images/**',
+        search: '?dt=20251021.01',
+      },
+    ],
     remotePatterns: [
       {
         hostname: 'localhost',

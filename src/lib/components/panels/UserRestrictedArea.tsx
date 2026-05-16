@@ -16,7 +16,7 @@ export function UserRestrictedArea({
   loadingComponent,
   unauthenticatedComponent,
   unverifiedComponent,
-}: UserRestrictedAreaProps): JSX.Element {
+}: UserRestrictedAreaProps): React.JSX.Element {
   const auth = useSession()
 
   if (auth.isLoading()) {

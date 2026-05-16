@@ -2,7 +2,7 @@ import NextImage from 'next/image'
 import { ImgHTMLAttributes } from 'react'
 import ReactMarkdown, { Components } from 'react-markdown'
 
-function ResponsiveImage(props: ImgHTMLAttributes<HTMLImageElement>): JSX.Element {
+function ResponsiveImage(props: ImgHTMLAttributes<HTMLImageElement>): React.JSX.Element {
   return (
     <span className="responsive-img">
       <NextImage src={props.src as string} alt={props.alt || ''} fill />
@@ -29,7 +29,7 @@ export default function MDXContent({
    * The components to use for rendering the MDX content.
    */
   components?: Components
-}): JSX.Element | null {
+}): React.JSX.Element | null {
   if (!content) return null
 
   components = components ? { ...defaultComponents, ...components } : defaultComponents

@@ -6,7 +6,7 @@ import { UserRestrictedArea } from '@/lib/components/panels/UserRestrictedArea'
 import { SessionMembership } from '../auth/types'
 import { PatreonMembership } from './PatreonMembership'
 
-export function ProfileTitle({ membership }: { membership: SessionMembership | null }): JSX.Element {
+export function ProfileTitle({ membership }: { membership: SessionMembership | null }): React.JSX.Element {
   if (!membership || !membership.patreonUserId) {
     return (
       <h2>
@@ -52,7 +52,7 @@ export function ProfileTitle({ membership }: { membership: SessionMembership | n
   )
 }
 
-export function ProfileView(): JSX.Element | null {
+export function ProfileView(): React.JSX.Element | null {
   const auth = useSession()
   const signOut = useSignOut()
 

@@ -1,7 +1,7 @@
 import type { NextRequest } from 'next/server'
 import { NextResponse } from 'next/server'
 
-export function middleware(req: NextRequest) {
+export function proxy(req: NextRequest) {
   const underMaintenance =
     process.env.POKEPC_MAINTENANCE_MODE_ENABLED === 'true' || process.env.POKEPC_MAINTENANCE_MODE_ENABLED === '1'
   if (underMaintenance && !req.nextUrl.pathname.startsWith('/maintenance')) {

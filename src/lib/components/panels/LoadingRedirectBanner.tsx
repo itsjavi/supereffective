@@ -7,7 +7,7 @@ export type RedirectAreaProps = {
   children?: React.ReactNode
 }
 
-export function LoadingRedirectBanner({ routeUri, children }: RedirectAreaProps): JSX.Element {
+export function LoadingRedirectBanner({ routeUri, children }: RedirectAreaProps): React.JSX.Element {
   const router = useRouter()
   const content = children ? children : <LoadingBanner />
 

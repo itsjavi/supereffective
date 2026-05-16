@@ -1,6 +1,6 @@
 import config from '@/config'
 
-export default function DocumentHeadContent(): JSX.Element {
+export default function DocumentHeadContent(): React.JSX.Element {
   const bgColor = '#08101B'
 
   return (

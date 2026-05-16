@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import { getLegacyLivingDexRepository } from '@/features/livingdex/services'
+import { getLegacyLivingDexRepository } from '@/features/livingdex/services/repository'
 import { apiBearerTokenGuard } from '@/features/users/auth/serverside/apiBearerTokenGuard'
 import { apiErrors } from '@/lib/utils/types'
 import { isValidIdSchema } from '@/lib/validation/schemas'

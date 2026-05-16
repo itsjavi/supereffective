@@ -16,7 +16,7 @@ import styles from './PkBox.module.css'
 import { PkBoxCell } from './PkBoxCell'
 import { PkBoxEmptyCell } from './PkBoxEmptyCell'
 import { PkBoxGroupFilter } from './PkBoxGroupFilter'
-import { PkBoxGroupProps, PkBoxGroupState } from './pkBoxTypes'
+import { PkBoxCellProps, PkBoxGroupProps, PkBoxGroupState, PkBoxProps } from './pkBoxTypes'
 
 // Goes through a box and marks individual pokemon that match the given filter
 function modifyFilteredBox(filter: PkFilter, box: DexBox): DexBox {
@@ -61,8 +61,8 @@ Only include a box element if:
  3) You're in list view and the pokemone matches the filter
 */
 export function filterBoxElements(filter: PkFilter | null, element: ReactElement) {
-  const { pokemonData, boxData } = element.props
-  return !filter || boxData?.hasFilterMatch || pokemonData?.matchesFilter
+  const { pokemonData, boxData } = element.props as Partial<PkBoxCellProps & PkBoxProps>
+  return Boolean(!filter || boxData?.hasFilterMatch || pokemonData?.matchesFilter)
 }
 
 // Modifies a given dex by indicating whether individual pokemon and their box match the filter

@@ -1,7 +1,7 @@
 import { ApiResponse, apiErrors } from '@/lib/utils/types'
 import { isValidIdSchema } from '@/lib/validation/schemas'
 
-import { getLegacyLivingDexRepository } from '../index'
+import { getLegacyLivingDexRepository } from '../repository'
 
 export const getDexApi = async (dexId: string): Promise<ApiResponse> => {
   if (!isValidIdSchema(dexId)) {

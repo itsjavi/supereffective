@@ -5,7 +5,7 @@ import { ApiResponse, apiErrors } from '@/lib/utils/types'
 import { isValidIdSchema } from '@/lib/validation/schemas'
 
 import { AuthUserState, SessionMembership } from '@/features/users/auth/types'
-import { getLegacyLivingDexRepository } from '../index'
+import { getLegacyLivingDexRepository } from '../repository'
 import { LoadedDexSchema } from '../schemas'
 import { LoadedDex, NullableDexPokemon } from '../types'
 

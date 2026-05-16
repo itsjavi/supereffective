@@ -12,7 +12,7 @@ import { LoadingBanner } from '@/lib/components/panels/LoadingBanner'
 import { LoadingRedirectBanner } from '@/lib/components/panels/LoadingRedirectBanner'
 import { PatreonButton } from '../components/PatreonButtons'
 
-export function LoginView({ csrfToken }: { csrfToken: string | null }): JSX.Element {
+export function LoginView({ csrfToken }: { csrfToken: string | null }): React.JSX.Element {
   const router = useRouter()
   const auth = useSession()
   const [tokenMode, setTokenMode] = useState(false)

@@ -4,6 +4,7 @@ build
 .turbo
 data
 node_modules
+next-env.d.ts
 .yarn/
 .cache/
 coverage/

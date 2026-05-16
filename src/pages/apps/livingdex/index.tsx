@@ -1,7 +1,7 @@
 import { GetServerSidePropsContext } from 'next'
 
 import { Dashboard } from '@/features/livingdex/components/Dashboard'
-import { getLegacyLivingDexRepository } from '@/features/livingdex/services'
+import { getLegacyLivingDexRepository } from '@/features/livingdex/services/repository'
 import { LivingDexResolvedUserLimits } from '@/features/livingdex/services/types'
 import PageMeta from '@/features/prose/components/PageMeta'
 import { getPageRepository } from '@/features/prose/services/getPageRepository'

@@ -2,7 +2,7 @@ import Head from 'next/head'
 
 import { useSession } from '@/features/users/auth/hooks/useSession'
 
-export default function GoogleAds(): JSX.Element | null {
+export default function GoogleAds(): React.JSX.Element | null {
   const auth = useSession()
   if (auth.isLoading() || auth.isAuthenticated()) {
     return null
