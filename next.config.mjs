@@ -33,6 +33,11 @@ const baseConfig = {
         destination: '/apps/livingdex/national',
         permanent: true,
       },
+      {
+        source: '/apps/livingdex/national',
+        destination: 'https://pokepc.net/livingdex',
+        permanent: true,
+      },
       // Wildcard path matching
       {
         source: '/news/:slug',
