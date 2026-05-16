@@ -18,6 +18,7 @@ coverage
 
 # next.js
 .next
+next-env.d.ts
 
 # turbo
 .turbo
@@ -45,11 +46,6 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-
-# next-sitemap
-**/public/robots.txt
-**/public/sitemap.xml
-**/public/sitemap-*.xml
 
 # next-pwa
 **/public/workbox-*.js

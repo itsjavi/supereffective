@@ -6,7 +6,7 @@
   "license": "MIT",
   "author": "Javi Aguilar https://itsjavi.com",
   "scripts": {
-    "build": "pnpm typecheck && pnpm build:data && next build --webpack && next-sitemap",
+    "build": "pnpm typecheck && pnpm build:data && next build --webpack",
     "build:data": "pnpm run build:data:pokemon && bun run src/lib/data-client/box-presets/join-presets.ts",
     "build:data:pokemon": "bun json:minify src/lib/data-client/pokemon/legacy-pokemon.json",
     "db-migrate": "pnpm prisma migrate deploy",
@@ -17,13 +17,13 @@
     "json:unminify": "bun run scripts/format-json-file.ts",
     "lint": "pnpm typecheck && prettier --ignore-path '.prettierignore' --check ./",
     "lint-fix": "pnpm format",
-    "prepare": "pnpm prisma generate && sort-package-json",
+    "prepare": "pnpm prisma generate --schema src/prisma/schema.prisma && sort-package-json",
     "qa": "pnpm quality-checks",
     "quality-checks": "pnpm quality-checks-nobuild && pnpm build",
-    "quality-checks-nobuild": "rm -rf .next && pnpm prisma generate && pnpm lint && pnpm test",
+    "quality-checks-nobuild": "rm -rf .next && pnpm prisma generate --schema src/prisma/schema.prisma && pnpm lint && pnpm test",
     "start": "next start",
     "test": "bun test",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "next typegen && tsc --noEmit"
   },
   "dependencies": {
     "@next-auth/prisma-adapter": "^1.0.7",
@@ -36,7 +36,6 @@
     "nanoid": "^5.1.11",
     "next": "^16.2.6",
     "next-auth": "^4.24.14",
-    "next-sitemap": "^4.2.3",
     "prisma": "^7.8.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
@@ -67,5 +66,8 @@
   "peerDependencies": {
     "nodemailer": "^6.9.12"
   },
-  "packageManager": "pnpm@9.4.0"
+  "packageManager": "pnpm@9.4.0",
+  "prisma": {
+    "schema": "src/prisma/schema.prisma"
+  }
 }

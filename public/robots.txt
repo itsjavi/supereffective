@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://classic.pokepc.net
+
+# Sitemaps
+Sitemap: https://classic.pokepc.net/sitemap.xml
